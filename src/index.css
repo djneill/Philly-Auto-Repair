@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-display: "Oswald", system-ui, sans-serif;
+
+    --color-background: #020617;
+    /* Very dark slate */
+    --color-surface: #0f172a;
+    /* Slate 900 */
+    --color-surface-hover: #1e293b;
+    /* Slate 800 */
+
+    --color-primary: #06b6d4;
+    /* Cyan 500 - The "Go Birds" accent */
+    --color-primary-glow: rgba(6, 182, 212, 0.5);
+
+    --color-text-main: #f8fafc;
+    /* Slate 50 */
+    --color-text-muted: #94a3b8;
+    /* Slate 400 */
+
+    --color-kelly: #4CBB17;
+    --color-kelly-glow: rgba(76, 187, 23, 0.5);
+}
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities for that "premium" feel */
+.glass-panel {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-glow {
+    text-shadow: 0 0 20px var(--color-primary-glow);
+}
+
+.text-glow-kelly {
+    text-shadow: 0 0 20px var(--color-kelly-glow);
+}
+
+@utility animate-marquee {
+    animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
